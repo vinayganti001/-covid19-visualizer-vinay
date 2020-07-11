@@ -83,7 +83,7 @@ export class CoviddataService {
     };
 
     return this.http
-      .post('http://zen-user-api.herokuapp.com/users/authenticate', data)
+      .post('https://zen-user-api.herokuapp.com/users/authenticate', data)
       .pipe(
         catchError((err) => {
           console.log(err);
@@ -105,7 +105,7 @@ export class CoviddataService {
       password: password,
     };
     return this.http
-      .post('http://zen-user-api.herokuapp.com/users/register', data)
+      .post('https://zen-user-api.herokuapp.com/users/register', data)
       .pipe(
         catchError((err) => {
           console.log(err.message);
