@@ -1,0 +1,9 @@
+  
+POST 
+http://zen-user-api.herokuapp.com/users/authenticate/
+{
+[
+"username":"guvigeeks@gmail.com",
+"password": "guvi"
+]
+}
