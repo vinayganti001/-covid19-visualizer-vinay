@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
         .subscribe((data) => {
           this.response = data;
           console.log(this.response);
-          this.notifyService.showSuccess('Login Successful!');
+          this.notifyService.showSuccess('Registration Successful!');
           this.router.navigate(['/login']);
         });
     } else {
