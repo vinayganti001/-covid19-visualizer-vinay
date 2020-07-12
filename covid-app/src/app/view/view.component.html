@@ -95,7 +95,7 @@
   <br />
   <div class="container-fluid">
     <div class="row">
-      <div class="chart-wrapper col-5">
+      <div class="chart-wrapper col-4">
         <h2 class="text-center" style="color: antiquewhite;">
           Daily Cases Graph
         </h2>
@@ -112,8 +112,8 @@
         >
         </canvas>
       </div>
-      <div class="col-2"></div>
-      <div class="chart-wrapper col-5">
+
+      <div class="chart-wrapper col-4">
         <h2 class="text-center" style="color: antiquewhite;">
           Cases Percentage
         </h2>
@@ -122,6 +122,23 @@
           [data]="doughnutChartData"
           [labels]="doughnutChartLabels"
           [chartType]="doughnutChartType"
+        >
+        </canvas>
+      </div>
+      <div class="chart-wrapper col-4">
+        <h2 class="text-center" style="color: antiquewhite;">
+          Total Cases Graph
+        </h2>
+
+        <canvas
+          baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+          class="bg-light-gray"
         >
         </canvas>
       </div>

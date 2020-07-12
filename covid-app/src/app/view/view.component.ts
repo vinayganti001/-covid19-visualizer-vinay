@@ -86,6 +86,16 @@ export class ViewComponent implements OnInit {
   doughnutChartData: MultiDataSet = [];
   doughnutChartType: ChartType = 'doughnut';
 
+  // bar chart
+  barChartOptions: ChartOptions = {
+    responsive: true,
+  };
+  barChartLabels: Label[];
+  barChartType: ChartType = 'bar';
+  barChartLegend = true;
+  barChartPlugins = [];
+
+  barChartData: ChartDataSets[];
   constructor(
     private dataService: CoviddataService,
     private notifyService: NotificationService,
@@ -182,6 +192,7 @@ export class ViewComponent implements OnInit {
       console.log('days', confirmedDays);
 
       this.lineChartLabels = confirmedLabels;
+      this.barChartLabels = confirmedLabels;
       this.lineChartData = [
         {
           data: confirmedDays,
@@ -194,6 +205,21 @@ export class ViewComponent implements OnInit {
         {
           data: deathDays,
           label: 'Daily Death Cases',
+        },
+      ];
+
+      this.barChartData = [
+        {
+          data: confirmedDays,
+          label: 'Total Confirmed Cases',
+        },
+        {
+          data: recoveredDays,
+          label: 'Total Recovered Cases',
+        },
+        {
+          data: deathDays,
+          label: 'Total Death Cases',
         },
       ];
 
